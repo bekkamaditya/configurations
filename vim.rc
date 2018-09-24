@@ -1,0 +1,44 @@
+set runtimepath+=~/.vim_runtime
+execute pathogen#infect()
+
+let mapleader = ","
+let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+"   let g:ctrlp_max_files=0
+"   let g:ctrlp_max_depth=40
+
+
+"   These are settings of nerdcommenter
+"   let g:NERDSpaceDelims = 1
+"   let g:NERDCompactSexyComs = 1
+"   let g:NERDDefaultAlign = 'left'
+"   let g:NERDAltDelims_java = 1
+"   let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+"   let g:NERDCommentEmptyLines = 1
+"   let g:NERDTrimTrailingWhitespace = 1
+
+
+
+source ~/.vim_runtime/vimrcs/basic.vim
+source ~/.vim_runtime/vimrcs/filetypes.vim
+source ~/.vim_runtime/vimrcs/plugins_config.vim
+source ~/.vim_runtime/vimrcs/extended.vim
+try
+source ~/.vim_runtime/my_configs.vim
+catch
+endtry
+
+set number
+syntax enable
+set background=dark
+colorscheme solarized
+
+" Mapping commands
+nmap <c-p> :CtrlPRoot<CR>
+nmap <c-m> :CtrlPMRUFiles<CR>
+
+" Toggle syntastic checks
+map <leader>st :SyntasticToggleMode<CR>
+
+" Toggling tag bar
+nnoremap <silent><F9> :TagbarToggle<CR>
